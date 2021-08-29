@@ -13,6 +13,6 @@ interface TodoDao {
     @Insert()
   suspend  fun insertTask(todoModel: TodoModel):Long
 
-    @Query("Select * From TodoModel where isFinished != -1 ")
+    @Query("Select * From TodoModel")
     fun getAllTask():LiveData<List<TodoModel>>
 }

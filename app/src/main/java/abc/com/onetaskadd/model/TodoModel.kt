@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey
 data class TodoModel(
 val taskName: String,
 var isFinished: Int =-1,
-@PrimaryKey
+@PrimaryKey(autoGenerate = true)
 var id:Long=0
 
 )

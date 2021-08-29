@@ -15,8 +15,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
     val todoList = arrayListOf<TodoModel>()
-    var recyclerAdapter= TodoAdapter(todoList)
-    lateinit var layoutmanger: RecyclerView.LayoutManager
+    private lateinit var recyclerAdapter : TodoAdapter
     lateinit var todoRv:  RecyclerView
     val db by lazy {
        TodoDatabase.getDatabase(this)
@@ -27,8 +26,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         todoRv= findViewById(R.id.todoRv)
+        recyclerAdapter = TodoAdapter(todoList)
         todoRv.apply {
-            layoutmanger= LinearLayoutManager(this@MainActivity)
+            layoutManager = LinearLayoutManager(this@MainActivity)
             adapter=this@MainActivity.recyclerAdapter
 
         }
