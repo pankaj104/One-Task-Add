@@ -6,6 +6,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
@@ -17,8 +18,17 @@ class TodoAdapter (val todoList: List<TodoModel>) :RecyclerView.Adapter<TodoAdap
         with(itemView){
 
             val txtShowTitle: TextView= findViewById(R.id.txtShowTitle)
+            val txtShowDesc: TextView=findViewById(R.id.txtShowDisc)
+            val txtShowInitial: TextView= findViewById(R.id.txtShowInitial)
+            val txtShowFinal: TextView= findViewById(R.id.txtShowFinal)
+            val cbDone: CheckBox= findViewById(R.id.cbDone)
             txtShowTitle.text=todoModel.taskName
+            txtShowDesc.text=todoModel.description
+            txtShowInitial.text=todoModel.initialValue
+            txtShowFinal.text=todoModel.finalValue
+            cbDone.isChecked=todoModel.isChecked
         }
+
         }
 
            }
@@ -29,6 +39,7 @@ class TodoAdapter (val todoList: List<TodoModel>) :RecyclerView.Adapter<TodoAdap
         return TodoViewHolder(view)
     }
 
+
     override fun onBindViewHolder(holder: TodoViewHolder, position: Int) {
        holder.bind(todoList[position])
     }
@@ -36,4 +47,7 @@ class TodoAdapter (val todoList: List<TodoModel>) :RecyclerView.Adapter<TodoAdap
     override fun getItemCount(): Int {
         return todoList.size
     }
+
+
 }
+

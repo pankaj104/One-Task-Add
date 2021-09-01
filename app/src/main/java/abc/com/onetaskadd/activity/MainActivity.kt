@@ -9,29 +9,43 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Adapter
+import android.widget.CheckBox
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
     val todoList = arrayListOf<TodoModel>()
-    var recyclerAdapter= TodoAdapter(todoList)
-    lateinit var layoutmanger: RecyclerView.LayoutManager
-    lateinit var todoRv:  RecyclerView
+    private lateinit var recyclerAdapter: TodoAdapter
+   //private lateinit var cbDone :CheckBox
+
+    //var recyclerAdapter= TodoAdapter(todoList)
+    // lateinit var layoutmanger: RecyclerView.LayoutManager
+    lateinit var todoRv: RecyclerView
     val db by lazy {
-       TodoDatabase.getDatabase(this)
-   }
+        TodoDatabase.getDatabase(this)
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        todoRv= findViewById(R.id.todoRv)
+        todoRv = findViewById(R.id.todoRv)
+       //cbDone=findViewById(R.id.cbDone)
+        recyclerAdapter = TodoAdapter(todoList)
+
         todoRv.apply {
-            layoutmanger= LinearLayoutManager(this@MainActivity)
-            adapter=this@MainActivity.recyclerAdapter
+            layoutManager = LinearLayoutManager(this@MainActivity)
+            adapter = this@MainActivity.recyclerAdapter
 
         }
+
+
+
 //        todoRv.adapter= recyclerAdapter
 //        todoRv.layoutManager=LinearLayoutManager(this)
 
@@ -41,11 +55,20 @@ class MainActivity : AppCompatActivity() {
                 todoList.addAll(it)
                 recyclerAdapter.notifyDataSetChanged()
             }
+
+
+
         })
+
+
+
     }
+
     fun openNewTask(view: View) {
         startActivity(Intent(this, TaskActivity::class.java))
     }
 
 
 }
+
+

@@ -19,7 +19,11 @@ const val DB_NAME = "todo.db"
 
 class TaskActivity : AppCompatActivity() {
     lateinit var etTaskName: EditText
+    lateinit var etDescName: EditText
+    lateinit var etInitialValue: EditText
+    lateinit var etFinalValue: EditText
     lateinit var saveTask: Button
+
 
     val db by lazy {
         TodoDatabase.getDatabase(this)
@@ -28,6 +32,9 @@ class TaskActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_task)
         etTaskName = findViewById(R.id.etTaskName)
+        etDescName= findViewById(R.id.etDiscName)
+        etInitialValue= findViewById(R.id.etInitialValue)
+        etFinalValue= findViewById(R.id.etFinalValue)
         saveTask= findViewById(R.id.saveTask)
 
     }
@@ -35,11 +42,18 @@ class TaskActivity : AppCompatActivity() {
 
     fun saveTask(view: View) {
         val taskName = etTaskName.editableText.toString()
+        val description= etDescName.editableText.toString()
+        val initialValue= etInitialValue.editableText.toString()
+        val finalValue= etFinalValue.editableText.toString()
               GlobalScope.launch(Dispatchers.Main) {
             val id = withContext(Dispatchers.IO) {
                 return@withContext db.todoDao ().insertTask(
                         TodoModel(
-                                taskName
+                                taskName,
+                                description,
+                                initialValue,
+                                finalValue
+
                         )
                 )
             }

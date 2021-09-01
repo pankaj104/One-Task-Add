@@ -14,7 +14,7 @@
         android:layout_weight="1"
         android:text="Task Name"
         android:layout_margin="14dp"
-        android:textSize="33sp"/>
+        android:textSize="15dp"/>
 
     <EditText
         android:id="@+id/etTaskName"
@@ -28,12 +28,82 @@
         android:inputType="textPersonName"
          />
 
+
+    <TextView
+        android:id="@+id/txtDiscName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Discription Name"
+        android:layout_margin="14dp"
+        android:textSize="15dp"/>
+
+    <EditText
+        android:id="@+id/etDiscName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="Please Enter Task Discription"
+        android:layout_margin="14dp"
+        android:textSize="20sp"
+        android:inputType="textPersonName"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txtInitialValue"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:text="Intial"
+            android:layout_margin="14dp"
+            android:textSize="25sp"/>
+
+        <EditText
+            android:id="@+id/etInitialValue"
+            android:layout_width="200dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+
+            android:hint="Initial"
+            android:layout_margin="14dp"
+            android:textSize="15sp"
+            android:inputType="number"
+            />
+        <TextView
+            android:id="@+id/txtFinalValue"
+            android:layout_width="200dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:text="Final"
+            android:layout_margin="14dp"
+            android:textSize="25sp"/>
+
+        <EditText
+            android:id="@+id/etFinalValue"
+            android:layout_width="200dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:hint="Final"
+            android:layout_margin="14dp"
+            android:textSize="15sp"
+            android:inputType="number"
+            />
+
+    </LinearLayout>
+
     <Button
         android:id="@+id/saveTask"
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="34dp"
-        android:layout_height="wrap_content"
         android:layout_weight="1"
         android:onClick="saveTask"
 
