@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?><com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginBottom="10dp"
+    android:elevation="20dp"
+    app:cardCornerRadius="20dp">
+
+    <View
+        android:id="@+id/viewColorTag"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginStart="5dp"
+        android:background="@android:color/white"
+        android:paddingBottom="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:padding="5dp">
+
+
+            <TextView
+                android:id="@+id/txtShowTitle"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="#42A107"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="Task Title" />
+
+            <TextView
+                android:id="@+id/alarmtxt"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="10dp"
+
+
+                android:text="3:00 PM"
+                android:textSize="20sp" />
+
+
+            <CheckBox
+                android:id="@+id/cbDone"
+                android:layout_width="28dp"
+                android:layout_height="31dp"
+                android:layout_below="@+id/txtShowTitle"
+                android:layout_marginLeft="1dp"
+                android:layout_marginTop="-9dp" />
+
+            <LinearLayout
+
+                android:id="@+id/alertlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:layout_below="@+id/txtShowTitle">
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="240dp"
+                    android:layout_height="15dp"
+                    android:layout_below="@+id/cbDone"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="15dp"
+                    android:defaultFocusHighlightEnabled="true"
+                    android:focusedByDefault="true"
+                    android:progressDrawable="@drawable/progress_bar"
+                    android:scrollbarAlwaysDrawHorizontalTrack="true"
+                    android:scrollbarDefaultDelayBeforeFade="@integer/material_motion_duration_long_1" />
+
+                <TextView
+                    android:id="@+id/txtShowInitial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignRight="@+id/txtTaskName"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="8dp"
+
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:visibility="visible"
+                    tools:text="01" />
+
+
+                <TextView
+                    android:id="@+id/slaceLine"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/txtShowInitial"
+                    android:layout_marginTop="8dp"
+                    android:text="/"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/txtShowFinal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_toEndOf="@+id/slaceLine"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:visibility="visible"
+                    tools:text="33" />
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>

@@ -18,8 +18,8 @@ interface TodoDao {
     @Query("Delete from TodoModel where id=:uid")
     fun deleteTask(uid:Long)
 
-//   @Delete()
-//   fun deleteTask(todoModel: TodoModel):Long
+//  @Delete()
+// fun deleteTask(todoModel: TodoModel):Long
 
     @Query("Select * From TodoModel")
     fun getAllTask():LiveData<List<TodoModel>>

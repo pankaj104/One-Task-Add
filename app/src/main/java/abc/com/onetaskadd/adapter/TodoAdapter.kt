@@ -18,12 +18,10 @@ class TodoAdapter (val todoList: List<TodoModel>) :RecyclerView.Adapter<TodoAdap
         with(itemView){
 
             val txtShowTitle: TextView= findViewById(R.id.txtShowTitle)
-            val txtShowDesc: TextView=findViewById(R.id.txtShowDisc)
             val txtShowInitial: TextView= findViewById(R.id.txtShowInitial)
             val txtShowFinal: TextView= findViewById(R.id.txtShowFinal)
             val cbDone: CheckBox= findViewById(R.id.cbDone)
             txtShowTitle.text=todoModel.taskName
-            txtShowDesc.text=todoModel.description
             txtShowInitial.text=todoModel.initialValue
             txtShowFinal.text=todoModel.finalValue
             cbDone.isChecked=todoModel.isChecked

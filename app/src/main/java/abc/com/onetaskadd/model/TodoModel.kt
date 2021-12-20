@@ -7,7 +7,6 @@ import androidx.room.PrimaryKey
 @Entity
 data class TodoModel(
 val taskName: String,
-var description:String,
 var initialValue: String,
 var finalValue: String,
 var isFinished: Int =-1,
